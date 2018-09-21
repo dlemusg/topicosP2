@@ -1,0 +1,42 @@
+<body>
+    <main role="main" class="container"></main>
+
+    <div class="starter-template">
+        <center>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLSFk8loDLMqzNpI-YIYMwmsI0syMaiyg"></script>
+            <!--jQuery-->
+            <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous">
+            </script>
+            <!--App -->
+            <script src="/js/route.js"></script>
+
+            <h1 class="page-header">INICIO</h1>
+            {{#if user}}
+            <p class="lead">Bienvenido!, {{user.username}}!</p>
+            {{else}}
+            <p class="lead">Bienvenido!</p>
+            {{/if}}
+            <p class="lead">Selecciona lo que quieres hacer!</p>
+
+            <button type="submit" class="btn btn-default" onclick="location='/users/location'" />Iniciar Recorrido</button>
+            <p style="visibility: hidden" id="demo"></p>
+            
+            {{#if user}}
+            <button id="recorrido" class="btn btn-default"/>Mostrar posiciones</button>
+            {{/if}}
+
+            <div id="map"></div>
+            <style type="text/css">
+                #map {
+                    height: 500px;
+                }
+            </style>
+            <div>
+                <p  style="visibility: hidden" id="demo">Ubicación</p>
+            </div>
+        </center>
+    </div>
+</body>
