@@ -70,14 +70,43 @@ __Escenario de Rendimiento__
 | Respuesta | Se procesa el registro o logueo |
 | Medida de Respuesta | Tiempo de respuesta promedio de 3 segundos |
 
-__Escenario de Seguridad__
-* __Fuente del estímulo:__
-* __Estímulo:__
-* __Ambiente:__
-* __Artefacto:__
-* __Respuesta:__
-* __Medida de respuesta:__
 
+__Escenario de Seguridad__
+| Escenario | 1 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Registro |
+| Artefacto | Auth0 |
+| Ambiente |  Operacion Normal |
+| Respuesta | El usuario queda registron ante auth0 |
+| Medida de Respuesta | Mejora el tiempo de respuesta al momento de registrarse y se aumenta la seguridad |
+
+| Escenario | 2 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Login |
+| Artefacto | Auth0 |
+| Ambiente |  Operacion Normal |
+| Respuesta | Se devuelve un token que autoriza el longin |
+| Medida de Respuesta | Auth0 se encarga del login para mayor seguridad, se garantiza un login siempre disponible |
+
+| Escenario | 3 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Cargar rutas |
+| Artefacto | Aplicacion |
+| Ambiente |  Operacion Normal |
+| Respuesta | Si el usuario no esta loggeado en la app las rutas no son disponibles |
+| Medida de Respuesta | Se muestra mensaje de no disponibilidad |
+
+| Escenario | 4 |
+| --- | --- |
+| Fuente del estímulo | Usuario |
+| Estímulo | Enviar datos y recibir datos |
+| Artefacto | Aplicacion |
+| Ambiente |  Operacion Normal |
+| Respuesta | La aplicacion utiliza conexion https |
+| Medida de Respuesta | Los datos son trasmitidos metdiante protocolos https |
 
 
 ### Diseño
@@ -112,8 +141,14 @@ __Herramientas__
 
 ### Definición de Tecnología v2
 
+* Lenguaje de programación: JavaScript
+* Entorno y Framework backend: NodeJS - Express
+* Framework frontend: Boostrap
+* Base de datos: MonngoDB
+* Web server: Nginx
 
-definir tecnologia a utilizar!!!!!!!
+* Certificados SSL: cerbot
+* Sign in/signn up: outh0
 
 
 ### Marco-referencia-v2
